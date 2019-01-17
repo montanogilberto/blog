@@ -1,0 +1,32 @@
+    <header>
+      <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+
+            <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+            Logo
+        </a>
+        <a class="navbar-brand">
+            <%= link_to "Inicio", root_path %>
+        </a>
+        <a class="navbar-brand">
+            <%= link_to "Desarrollo", root_path %>
+        </a>
+        <a class="navbar-brand">
+            <%= link_to "Tecnologia", root_path %>
+        </a>
+        
+        <% if user_signed_in?%>
+            <a class="navbar-brand">
+                <%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete %>
+            </a>
+        <% else %>
+            <a class="navbar-brand">
+                <%= link_to "Iniciar Sesion", new_user_session_path %>
+            </a>
+            <a class="navbar-brand">
+                <%= link_to "Crear Cuenta", new_user_registration_path %>
+            </a>
+
+        <% end %>
+      </nav>
+    </header>
